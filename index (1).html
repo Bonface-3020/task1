@@ -1,0 +1,3261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen Media Limited — Africa's Specialist Sports Sponsorship, Rights &amp; Media Intelligence Partner</title>
+  <meta name="description"
+    content="Listen Media structures, activates, and delivers Africa's sports commercial rights — converting the continent's vast, underpenetrated sports assets into consistent, measurable value for brands, rights holders, media companies, agencies, and investors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════
+   BRAND TOKENS
+══════════════════════════════════════════ */
+    :root {
+      --deep-blue: #003366;
+      --deep-blue-lt: #3A7CC7;
+      --white: #FFFFFF;
+      --off-white: #F5F7FA;
+      --orange: #E97020;
+      --green: #44B649;
+      --teal: #00A89D;
+      --red: #D42025;
+      --hot-pink: #E8185C;
+      --purple: #8E3FAF;
+
+      --text-muted: rgba(255, 255, 255, 0.62);
+      --text-subtle: rgba(255, 255, 255, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-blue: rgba(58, 124, 199, 0.22);
+
+      /* Layout & background layers */
+      --bg-darkest: #030d1a;
+      --bg-dark: #05152b;
+      --bg-mid: #071d3a;
+      --bg-navy: #0a2448;
+
+      /* Design system */
+      --glass-bg: rgba(255, 255, 255, 0.032);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-blur: blur(18px);
+      --radius-card: 16px;
+      --radius-sm: 8px;
+      --transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Glow shadows */
+      --glow-orange: 0 0 48px rgba(233, 112, 32, 0.18);
+      --glow-teal: 0 0 48px rgba(0, 168, 157, 0.18);
+      --glow-blue: 0 0 48px rgba(58, 124, 199, 0.18);
+      --glow-green: 0 0 48px rgba(68, 182, 73, 0.18);
+      --glow-pink: 0 0 48px rgba(232, 24, 92, 0.18);
+      --glow-purple: 0 0 48px rgba(142, 63, 175, 0.18);
+    }
+
+    /* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-darkest);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ══════════════════════════════════════════
+   SCROLL REVEAL SYSTEM
+══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.from-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal.from-right {
+      transform: translateX(40px);
+    }
+
+    .reveal.from-up {
+      transform: translateY(-20px);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.1rem 2.5rem;
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      background: rgba(3, 13, 26, 0.94);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.42);
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.58);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--orange), var(--teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--orange) 0%, #c96010 100%);
+      color: var(--white);
+      border: none;
+      padding: 0.65rem 1.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(233, 112, 32, 0.35);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(233, 112, 32, 0.5);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      gap: 5px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 20px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile overlay menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(3, 13, 26, 0.98);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.45s ease, transform 0.45s ease, color 0.25s;
+    }
+
+    .mobile-menu.open a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-menu.open a:nth-child(1) {
+      transition-delay: 0.08s;
+    }
+
+    .mobile-menu.open a:nth-child(2) {
+      transition-delay: 0.15s;
+    }
+
+    .mobile-menu.open a:nth-child(3) {
+      transition-delay: 0.22s;
+    }
+
+    .mobile-menu.open a:nth-child(4) {
+      transition-delay: 0.29s;
+    }
+
+    .mobile-menu.open a:nth-child(5) {
+      transition-delay: 0.36s;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--orange);
+    }
+
+    .mobile-menu-cta {
+      margin-top: 0.5rem;
+      background: linear-gradient(135deg, var(--orange), #c96010);
+      color: var(--white);
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.45s ease 0.44s, transform 0.45s ease 0.44s;
+    }
+
+    .mobile-menu.open .mobile-menu-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 9rem 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse 70% 80% at 20% 60%, #003d7a 0%, #001a38 48%, var(--bg-darkest) 100%);
+    }
+
+    .hero-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── HERO RIGHT — Impact Stats Panel ─── */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeUp 0.9s 0.4s both;
+      margin-top: -20rem;
+    }
+
+    .hero-arc-wrap {
+      position: relative;
+      width: 420px;
+      height: 420px;
+      flex-shrink: 0;
+    }
+
+    .hero-arc-svg {
+      width: 100%;
+      height: 100%;
+      animation: arc-spin 28s linear infinite;
+    }
+
+    @keyframes arc-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Stat cards floating around the arc — clock-face positions */
+    .hero-stat-card {
+      position: absolute;
+      background: rgba(5, 21, 43, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 1rem 1.4rem;
+      min-width: 130px;
+      animation: fadeUp 0.8s both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-stat-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cards are children 3-7 inside .hero-arc-wrap (after SVG and center div) */
+    /* 12 o'clock — top center */
+    .hero-stat-card:nth-child(3) {
+      top: -8%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 0.6s;
+      border-top: 2px solid var(--orange);
+    }
+
+    /* 3 o'clock — right middle */
+    .hero-stat-card:nth-child(4) {
+      top: 38%;
+      right: -22%;
+      animation-delay: 0.75s;
+      border-top: 2px solid var(--teal);
+    }
+
+    /* 5 o'clock — bottom right */
+    .hero-stat-card:nth-child(5) {
+      bottom: 2%;
+      right: -14%;
+      animation-delay: 0.9s;
+      border-top: 2px solid var(--green);
+    }
+
+    /* 7 o'clock — bottom left */
+    .hero-stat-card:nth-child(6) {
+      bottom: 2%;
+      left: -14%;
+      animation-delay: 1.05s;
+      border-top: 2px solid var(--purple);
+    }
+
+    /* 9 o'clock — left middle */
+    .hero-stat-card:nth-child(7) {
+      top: 38%;
+      left: -22%;
+      animation-delay: 1.2s;
+      border-top: 2px solid var(--hot-pink);
+    }
+
+    .stat-card-num {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-card-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Central badge inside the arc */
+    .hero-arc-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .hero-arc-center-logo {
+      display: block;
+      margin: 0 auto 0.5rem;
+      animation: arc-spin 28s linear infinite reverse;
+    }
+
+    .hero-arc-center-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
+    .hero-arc-center-sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Floating blobs */
+    .hero-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      animation: blob-float 12s ease-in-out infinite;
+      will-change: transform;
+      filter: blur(50px);
+    }
+
+    .shape-1 {
+      width: 580px;
+      height: 580px;
+      opacity: 0.07;
+      background: var(--orange);
+      top: -18%;
+      right: -10%;
+      animation-delay: 0s;
+      animation-duration: 14s;
+    }
+
+    .shape-2 {
+      width: 380px;
+      height: 380px;
+      opacity: 0.07;
+      background: var(--teal);
+      bottom: 5%;
+      right: 18%;
+      animation-delay: -4s;
+      animation-duration: 11s;
+    }
+
+    .shape-3 {
+      width: 260px;
+      height: 260px;
+      opacity: 0.06;
+      background: var(--purple);
+      top: 28%;
+      right: 32%;
+      animation-delay: -7s;
+      animation-duration: 9s;
+    }
+
+    .shape-4 {
+      width: 200px;
+      height: 200px;
+      opacity: 0.05;
+      background: var(--hot-pink);
+      bottom: -5%;
+      left: 12%;
+      animation-delay: -2s;
+      animation-duration: 13s;
+    }
+
+    .shape-5 {
+      width: 150px;
+      height: 150px;
+      opacity: 0.06;
+      background: var(--green);
+      top: 22%;
+      left: 42%;
+      animation-delay: -5s;
+      animation-duration: 10s;
+    }
+
+    @keyframes blob-float {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      33% {
+        transform: translateY(-32px) scale(1.06);
+      }
+
+      66% {
+        transform: translateY(22px) scale(0.96);
+      }
+    }
+
+    /* Grid overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.016) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.016) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* Hero content */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(68, 182, 73, 0.1);
+      border: 1px solid rgba(68, 182, 73, 0.28);
+      padding: 0.42rem 1.1rem;
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 2.2rem;
+      width: fit-content;
+      border-radius: 100px;
+      animation: fadeUp 0.8s 0.08s both;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: pulse-dot 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(68, 182, 73, 0.7);
+      }
+
+      50% {
+        box-shadow: 0 0 0 7px rgba(68, 182, 73, 0);
+      }
+    }
+
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(3rem, 7.5vw, 7rem);
+      line-height: 1.04;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.8rem;
+      max-width: 1080px;
+      animation: fadeUp 0.8s 0.22s both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.88;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      animation: fadeUp 0.8s 0.36s both;
+    }
+
+    .hero-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-bottom: 3.5rem;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      max-width: 860px;
+      animation: fadeUp 0.8s 0.5s both;
+    }
+
+    .hero-pillar {
+      background: rgba(0, 30, 65, 0.65);
+      backdrop-filter: blur(12px);
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      transition: background 0.3s;
+    }
+
+    .hero-pillar:hover {
+      background: rgba(0, 50, 110, 0.75);
+    }
+
+    .pillar-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .pillar-desc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.62s both;
+      justify-content: flex-start;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ══════════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════════ */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange) 0%, #c96010 100%);
+      color: var(--white);
+      padding: 1rem 2.6rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 100px;
+      transition: var(--transition);
+      box-shadow: 0 4px 24px rgba(233, 112, 32, 0.38);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 34px rgba(233, 112, 32, 0.54);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 1rem 2.6rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border-radius: 100px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      box-shadow: 0 0 24px rgba(0, 168, 157, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--deep-blue);
+      border: none;
+      padding: 1.1rem 3rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 34px rgba(255, 255, 255, 0.28);
+      background: var(--off-white);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.36);
+      padding: 1.1rem 3rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      transition: var(--transition);
+    }
+
+    .btn-outline-white:hover {
+      border-color: var(--white);
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+      transform: translateY(-3px);
+    }
+
+    /* ══════════════════════════════════════════
+   COLOR BAR
+══════════════════════════════════════════ */
+    .color-bar {
+      display: flex;
+      height: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .color-bar span {
+      flex: 1;
+    }
+
+    .color-bar .c1 {
+      background: var(--red);
+    }
+
+    .color-bar .c2 {
+      background: var(--orange);
+    }
+
+    .color-bar .c3 {
+      background: var(--green);
+    }
+
+    .color-bar .c4 {
+      background: var(--teal);
+    }
+
+    .color-bar .c5 {
+      background: var(--hot-pink);
+    }
+
+    .color-bar .c6 {
+      background: var(--purple);
+    }
+
+    .color-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3.2s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% center;
+      }
+
+      100% {
+        background-position: -200% center;
+      }
+    }
+
+    /* ══════════════════════════════════════════
+   SECTION BASE
+══════════════════════════════════════════ */
+    section {
+      padding: 8rem 2.5rem;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--deep-blue-lt);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 26px;
+      height: 2px;
+      flex-shrink: 0;
+      background: linear-gradient(90deg, var(--orange), var(--deep-blue-lt));
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-body {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.88;
+      max-width: 680px;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-blue), transparent);
+    }
+
+    /* Tag pills (shared) */
+    .what-tag,
+    .tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    .tag-orange {
+      background: rgba(233, 112, 32, 0.12);
+      color: var(--orange);
+      border: 1px solid rgba(233, 112, 32, 0.28);
+    }
+
+    .tag-blue {
+      background: rgba(58, 124, 199, 0.12);
+      color: var(--deep-blue-lt);
+      border: 1px solid rgba(58, 124, 199, 0.28);
+    }
+
+    .tag-green {
+      background: rgba(68, 182, 73, 0.12);
+      color: var(--green);
+      border: 1px solid rgba(68, 182, 73, 0.28);
+    }
+
+    .tag-teal {
+      background: rgba(0, 168, 157, 0.12);
+      color: var(--teal);
+      border: 1px solid rgba(0, 168, 157, 0.28);
+    }
+
+    .tag-pink {
+      background: rgba(232, 24, 92, 0.12);
+      color: var(--hot-pink);
+      border: 1px solid rgba(232, 24, 92, 0.28);
+    }
+
+    .tag-purple {
+      background: rgba(142, 63, 175, 0.12);
+      color: var(--purple);
+      border: 1px solid rgba(142, 63, 175, 0.28);
+    }
+
+    /* ══════════════════════════════════════════
+   GLASS CARD — reusable mixin pattern
+══════════════════════════════════════════ */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      transition: var(--transition);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.046);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.48);
+      transform: translateY(-6px);
+    }
+
+    /* ══════════════════════════════════════════
+   WHAT WE DO
+══════════════════════════════════════════ */
+    .what-section {
+      background: var(--bg-dark);
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 4rem;
+    }
+
+    .what-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 2.6rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* top gradient accent */
+    .what-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .what-card:nth-child(1)::before {
+      background: linear-gradient(90deg, var(--orange), #ff9a56);
+    }
+
+    .what-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--deep-blue-lt), var(--teal));
+    }
+
+    .what-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--teal), var(--green));
+    }
+
+    .what-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.048);
+    }
+
+    .what-card:nth-child(1):hover {
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.42), var(--glow-orange);
+    }
+
+    .what-card:nth-child(2):hover {
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.42), var(--glow-blue);
+    }
+
+    .what-card:nth-child(3):hover {
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.42), var(--glow-teal);
+    }
+
+    .what-card h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.9rem;
+    }
+
+    .what-card p {
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      line-height: 1.82;
+    }
+
+    .what-tag {
+      margin-bottom: 1.1rem;
+    }
+
+    /* ══════════════════════════════════════════
+   SOLUTIONS
+══════════════════════════════════════════ */
+    .solutions-bg {
+      background: var(--bg-darkest);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 4rem;
+    }
+
+    .solution-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 2.5rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* bottom gradient accent on hover */
+    .solution-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 0 0 var(--radius-card) var(--radius-card);
+      opacity: 0;
+      transition: opacity 0.38s ease;
+    }
+
+    .solution-card:nth-child(1)::after {
+      background: linear-gradient(90deg, var(--orange), #ff9a56);
+    }
+
+    .solution-card:nth-child(2)::after {
+      background: linear-gradient(90deg, var(--green), var(--teal));
+    }
+
+    .solution-card:nth-child(3)::after {
+      background: linear-gradient(90deg, var(--deep-blue-lt), var(--purple));
+    }
+
+    .solution-card:nth-child(4)::after {
+      background: linear-gradient(90deg, var(--teal), var(--green));
+    }
+
+    .solution-card:nth-child(5)::after {
+      background: linear-gradient(90deg, var(--purple), var(--hot-pink));
+    }
+
+    .solution-card:nth-child(6)::after {
+      background: linear-gradient(90deg, var(--hot-pink), var(--orange));
+    }
+
+    .solution-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.044);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+    }
+
+    .solution-card:hover::after {
+      opacity: 1;
+    }
+
+    .solution-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--deep-blue-lt);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .solution-icon {
+      font-size: 2rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .solution-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.85rem;
+      line-height: 1.2;
+    }
+
+    .solution-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.78;
+      margin-bottom: 1.5rem;
+    }
+
+    .solution-features {
+      list-style: none;
+    }
+
+    .solution-features li {
+      font-size: 0.79rem;
+      color: var(--text-subtle);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .solution-features li:last-child {
+      border-bottom: none;
+    }
+
+    .solution-features li::before {
+      content: '→';
+      color: var(--deep-blue-lt);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 0.12rem;
+    }
+
+    /* ══════════════════════════════════════════
+   PORTFOLIO
+══════════════════════════════════════════ */
+    .assets-section {
+      background: var(--bg-mid);
+    }
+
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 4rem;
+    }
+
+    .asset-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* top accent */
+    .asset-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .asset-card:nth-child(1)::before {
+      background: linear-gradient(90deg, var(--orange), #ff9a56);
+    }
+
+    .asset-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--green), var(--teal));
+    }
+
+    .asset-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--teal), var(--deep-blue-lt));
+    }
+
+    .asset-card:nth-child(4)::before {
+      background: linear-gradient(90deg, var(--deep-blue-lt), var(--purple));
+    }
+
+    .asset-card:nth-child(5)::before {
+      background: linear-gradient(90deg, var(--hot-pink), var(--purple));
+    }
+
+    .asset-card:nth-child(6)::before {
+      background: linear-gradient(90deg, var(--red), var(--hot-pink));
+    }
+
+    .asset-card:nth-child(7)::before {
+      background: linear-gradient(90deg, var(--purple), var(--hot-pink));
+    }
+
+    .asset-card:nth-child(8)::before {
+      background: linear-gradient(90deg, var(--orange), var(--red));
+    }
+
+    /* Hover overlay with stat highlight */
+    .asset-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(3, 13, 26, 0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition);
+      border-radius: var(--radius-card);
+    }
+
+    .asset-card:hover .asset-hover-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .asset-hover-overlay .ho-stat {
+      font-family: 'EB Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .asset-hover-overlay .ho-stat-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .asset-hover-overlay .ho-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .asset-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.52);
+    }
+
+    .asset-sport {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--deep-blue-lt);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .asset-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.55rem;
+      line-height: 1.2;
+    }
+
+    .asset-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .asset-stat {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.85rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .asset-stat-label {
+      font-size: 0.65rem;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .flagship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: linear-gradient(135deg, var(--orange), #c96010);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.26rem 0.72rem;
+      margin-bottom: 0.85rem;
+      border-radius: 100px;
+    }
+
+    /* ══════════════════════════════════════════
+   MMAP / ACCOUNTABILITY
+══════════════════════════════════════════ */
+    .mmap-section {
+      background: var(--bg-darkest);
+    }
+
+    .mmap-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 4rem;
+    }
+
+    .mmap-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+      padding-left: 1.75rem;
+    }
+
+    /* Animated connector line on the left */
+    .mmap-pillars::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 3px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, var(--orange), var(--teal), var(--green), var(--purple), var(--hot-pink));
+    }
+
+    .mmap-pillar {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem 1.75rem;
+      transition: var(--transition);
+    }
+
+    .mmap-pillar:nth-child(1) {
+      border-left: 3px solid var(--orange);
+    }
+
+    .mmap-pillar:nth-child(2) {
+      border-left: 3px solid var(--teal);
+    }
+
+    .mmap-pillar:nth-child(3) {
+      border-left: 3px solid var(--green);
+    }
+
+    .mmap-pillar:nth-child(4) {
+      border-left: 3px solid var(--purple);
+    }
+
+    .mmap-pillar:nth-child(5) {
+      border-left: 3px solid var(--hot-pink);
+    }
+
+    .mmap-pillar:hover {
+      background: rgba(255, 255, 255, 0.056);
+      transform: translateX(6px);
+      border-right-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .mmap-pillar h4 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.18rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .mmap-pillar p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .mmap-right {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .mmap-callout {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--radius-card);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--glow-teal);
+    }
+
+    .mmap-callout h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .mmap-callout p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.78;
+    }
+
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+    }
+
+    .metrics-table th {
+      text-align: left;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--deep-blue-lt);
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-blue);
+      background: rgba(58, 124, 199, 0.07);
+    }
+
+    .metrics-table td {
+      font-size: 0.82rem;
+      padding: 0.75rem 1rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    .metrics-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .metrics-table tbody tr:hover td {
+      background: rgba(58, 124, 199, 0.08);
+    }
+
+    /* ROI stages box */
+    .roi-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .roi-box-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--deep-blue-lt);
+      margin-bottom: 1.25rem;
+    }
+
+    .roi-stage-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.75rem 0.9rem;
+      border-radius: 6px;
+      background: rgba(58, 124, 199, 0.055);
+      margin-bottom: 0.65rem;
+    }
+
+    .roi-stage-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .roi-stage-row:nth-child(1) {
+      border-left: 2px solid var(--orange);
+    }
+
+    .roi-stage-row:nth-child(2) {
+      border-left: 2px solid var(--teal);
+    }
+
+    .roi-stage-row:nth-child(3) {
+      border-left: 2px solid var(--green);
+    }
+
+    .roi-stage-row:nth-child(4) {
+      border-left: 2px solid var(--purple);
+    }
+
+    .roi-row-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.1rem;
+    }
+
+    .roi-stage-row:nth-child(1) .roi-row-num {
+      color: var(--orange);
+    }
+
+    .roi-stage-row:nth-child(2) .roi-row-num {
+      color: var(--teal);
+    }
+
+    .roi-stage-row:nth-child(3) .roi-row-num {
+      color: var(--green);
+    }
+
+    .roi-stage-row:nth-child(4) .roi-row-num {
+      color: var(--purple);
+    }
+
+    .roi-row-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.52;
+    }
+
+    /* ══════════════════════════════════════════
+   SPONSORS PROMISE
+══════════════════════════════════════════ */
+    .partners-section {
+      background: var(--bg-dark);
+    }
+
+    .partner-promise {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .promise-card {
+      padding: 2.6rem 2.2rem;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .promise-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .promise-card:nth-child(1)::before {
+      background: linear-gradient(90deg, var(--orange), #ff9a56);
+    }
+
+    .promise-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--teal), var(--green));
+    }
+
+    .promise-card:nth-child(3)::before {
+      background: linear-gradient(90deg, var(--green), var(--teal));
+    }
+
+    .promise-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.44);
+      background: rgba(255, 255, 255, 0.046);
+    }
+
+    /* Giant ghost number */
+    .promise-num {
+      font-family: 'EB Garamond', serif;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.04);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    .promise-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.85rem;
+    }
+
+    .promise-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.82;
+    }
+
+    /* ══════════════════════════════════════════
+   MISSION
+══════════════════════════════════════════ */
+    .mission-section {
+      background: var(--bg-darkest);
+    }
+
+    .mission-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      margin-bottom: 5rem;
+      align-items: center;
+    }
+
+    .mission-statement {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 var(--radius-card) var(--radius-card) 0;
+      padding: 3rem;
+      box-shadow: var(--glow-orange);
+    }
+
+    .mission-statement h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .mission-statement p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.92;
+    }
+
+    .values-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.1rem 1.3rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      transition: var(--transition);
+    }
+
+    .value-item:nth-child(1) {
+      border-left: 3px solid var(--orange);
+    }
+
+    .value-item:nth-child(2) {
+      border-left: 3px solid var(--teal);
+    }
+
+    .value-item:nth-child(3) {
+      border-left: 3px solid var(--green);
+    }
+
+    .value-item:nth-child(4) {
+      border-left: 3px solid var(--purple);
+    }
+
+    .value-item:hover {
+      background: rgba(255, 255, 255, 0.056);
+      transform: translateX(5px);
+    }
+
+    .value-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.22rem;
+    }
+
+    .value-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ─── MILESTONES ─── */
+    .milestones-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .milestones-sub {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 4rem;
+      max-width: 620px;
+      line-height: 1.78;
+    }
+
+    /* Horizontal track */
+    .milestones-track {
+      position: relative;
+      padding-top: 3.2rem;
+    }
+
+    .milestones-track::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--deep-blue-lt), var(--teal), var(--green), var(--orange), var(--hot-pink));
+      border-radius: 3px;
+    }
+
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+    }
+
+    .milestone-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-card);
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* Timeline dot connector */
+    .milestone-card::before {
+      content: '';
+      position: absolute;
+      top: calc(-3.2rem + 0px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 2.5px solid var(--white);
+      background: var(--bg-darkest);
+    }
+
+    .milestone-card:nth-child(1)::before {
+      background: var(--deep-blue-lt);
+      box-shadow: 0 0 12px var(--deep-blue-lt);
+    }
+
+    .milestone-card:nth-child(2)::before {
+      background: var(--teal);
+      box-shadow: 0 0 12px var(--teal);
+    }
+
+    .milestone-card:nth-child(3)::before {
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .milestone-card:nth-child(4)::before {
+      background: var(--orange);
+      box-shadow: 0 0 12px var(--orange);
+    }
+
+    .milestone-card:nth-child(5)::before {
+      background: var(--hot-pink);
+      box-shadow: 0 0 12px var(--hot-pink);
+    }
+
+    /* Top color accent */
+    .milestone-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+    }
+
+    .milestone-card:nth-child(1)::after {
+      background: var(--deep-blue-lt);
+    }
+
+    .milestone-card:nth-child(2)::after {
+      background: var(--teal);
+    }
+
+    .milestone-card:nth-child(3)::after {
+      background: var(--green);
+    }
+
+    .milestone-card:nth-child(4)::after {
+      background: var(--orange);
+    }
+
+    .milestone-card:nth-child(5)::after {
+      background: var(--hot-pink);
+    }
+
+    .milestone-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.5);
+    }
+
+    .milestone-phase {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--deep-blue-lt);
+      margin-bottom: 0.5rem;
+    }
+
+    .milestone-year {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .milestone-geo {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .milestone-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.32;
+      margin-bottom: 0.65rem;
+    }
+
+    .milestone-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .milestone-badge {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      margin-top: 0.9rem;
+      border-radius: 100px;
+    }
+
+    /* ══════════════════════════════════════════
+   CTA
+══════════════════════════════════════════ */
+    .cta-section {
+      padding: 9rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radial gradient base */
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 50%, #1a4a8a 0%, #003366 40%, var(--bg-darkest) 100%);
+    }
+
+    /* Grain overlay */
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .cta-glow-left {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(233, 112, 32, 0.1) 0%, transparent 65%);
+      top: -15%;
+      left: 5%;
+      pointer-events: none;
+    }
+
+    .cta-glow-right {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 168, 157, 0.09) 0%, transparent 65%);
+      bottom: -15%;
+      right: 5%;
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 1.3rem;
+      line-height: 1.14;
+    }
+
+    .cta-section h2 em {
+      font-style: italic;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.06rem;
+      max-width: 580px;
+      margin: 0 auto 3rem;
+      line-height: 1.82;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+    footer {
+      background: var(--bg-darkest);
+      padding: 5rem 2.5rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.95rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      line-height: 1.78;
+      max-width: 280px;
+    }
+
+    .footer-badges {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-badges span {
+      font-size: 0.6rem;
+      color: rgba(255, 255, 255, 0.32);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      background: rgba(255, 255, 255, 0.042);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 100px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--deep-blue-lt);
+      margin-bottom: 1.3rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: color 0.22s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.055);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-standards {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-standards span {
+      font-size: 0.62rem;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+    @media (max-width: 1200px) {
+      .assets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .milestones-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .milestone-card::before {
+        display: none;
+      }
+
+      .milestones-track::before {
+        display: none;
+      }
+
+      .milestones-track {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 960px) {
+
+      /* Nav */
+      nav {
+        padding: 0.9rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 1.5rem;
+      }
+
+      .hero {
+        padding: 8.5rem 1.5rem 4rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 8.5vw, 4.2rem);
+      }
+
+      .hero-pillars {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+      }
+
+      /* Grids */
+      .what-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .assets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .partner-promise {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-intro {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .milestones-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+
+      /* MMAP */
+      .mmap-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .mmap-right {
+        position: static;
+      }
+
+      .mmap-pillars {
+        padding-left: 1rem;
+      }
+
+      .mmap-pillars::before {
+        left: -0.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 4rem 1.2rem;
+      }
+
+      .hero {
+        padding: 8rem 1.2rem 3rem;
+      }
+
+      .hero-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .assets-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .milestones-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-outline,
+      .btn-white,
+      .btn-outline-white {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ─── MOBILE OVERLAY MENU ─── -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+    <a href="#what-we-do" onclick="closeMobileMenu()">What We Do</a>
+    <a href="#solutions" onclick="closeMobileMenu()">Solutions</a>
+    <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+    <a href="#accountability" onclick="closeMobileMenu()">Accountability</a>
+    <a href="#mission" onclick="closeMobileMenu()">Our Mission</a>
+    <button class="mobile-menu-cta" onclick="closeMobileMenu()">Partner With Us</button>
+  </div>
+
+  <!-- ─── NAV ─── -->
+  <nav id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" aria-label="Listen Media home">
+        <svg width="36" height="36" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M19 5C26 5,33 11,33 19" stroke="#44B649" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M33 19C33 27,26 33,19 33" stroke="#E8185C" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M22 9C28 11,31 17,29 23" stroke="#8E3FAF" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M9 19C9 12,14 7,19 6" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M14 30C9 27,7 22,9 17" stroke="#3A7CC7" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M22 29C19 33,14 33,11 30" stroke="#D42025" stroke-width="3" stroke-linecap="round" fill="none" />
+        </svg>
+        <div class="nav-logo-text">LISTEN<span>MEDIA</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#what-we-do">What We Do</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#accountability">Accountability</a>
+        <a href="#mission">Our Mission</a>
+      </div>
+      <button class="nav-cta" id="navCtaBtn">Partner With Us</button>
+      <div class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" role="button"
+        tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="home">
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <!-- ── LEFT COLUMN ── -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Headquartered in Mombasa, Kenya
+        </div>
+
+        <h1>Africa's Specialist Sports Sponsorship,<br><em>Rights &amp; Media Intelligence</em> Partner</h1>
+
+        <p class="hero-sub">We structure, activate, and deliver Africa's sports commercial rights — converting the
+          continent's vast, underpenetrated sports assets into consistent, measurable value for brands, rights holders,
+          media companies, agencies, and investors.</p>
+
+        <div class="hero-pillars">
+          <div class="hero-pillar">
+            <div class="pillar-label" style="color:var(--orange);">Sponsorship</div>
+            <div class="pillar-desc">Rights packaging, brand fit-scoring &amp; ROI measurement</div>
+          </div>
+          <div class="hero-pillar">
+            <div class="pillar-label" style="color:var(--deep-blue-lt);">Media Rights</div>
+            <div class="pillar-desc">Broadcast, OTT &amp; digital rights structuring</div>
+          </div>
+          <div class="hero-pillar">
+            <div class="pillar-label" style="color:var(--teal);">Intelligence</div>
+            <div class="pillar-desc">MASB MMAP-aligned data, valuation &amp; analytics</div>
+          </div>
+          <div class="hero-pillar">
+            <div class="pillar-label" style="color:var(--green);">Commercial Rights</div>
+            <div class="pillar-desc">End-to-end delivery for rights holders &amp; investors</div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <button class="btn-primary" id="heroExploreBrn">Explore Our Solutions</button>
+          <button class="btn-outline" id="heroPortfolioBtn">View Our Portfolio</button>
+        </div>
+      </div>
+
+      <!-- ── RIGHT COLUMN — Impact Stats Visual ── -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-arc-wrap">
+          <!-- Spinning arc rings -->
+          <svg class="hero-arc-svg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer dashed orbit -->
+            <circle cx="210" cy="210" r="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="6 6"
+              fill="none" />
+            <!-- Mid orbit -->
+            <circle cx="210" cy="210" r="155" stroke="rgba(255,255,255,0.04)" stroke-width="1" fill="none" />
+            <!-- Inner orbit -->
+            <circle cx="210" cy="210" r="105" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 8"
+              fill="none" />
+            <!-- Colored arcs -->
+            <path d="M210 10 A200 200 0 0 1 385 135" stroke="#44B649" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M385 135 A200 200 0 0 1 395 275" stroke="#E8185C" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M395 275 A200 200 0 0 1 290 390" stroke="#E97020" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M290 390 A200 200 0 0 1 115 390" stroke="#8E3FAF" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M115 390 A200 200 0 0 1 18 270" stroke="#3A7CC7" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M18 270 A200 200 0 0 1 25 130" stroke="#D42025" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <path d="M25 130 A200 200 0 0 1 210 10" stroke="#00A89D" stroke-width="3" stroke-linecap="round"
+              fill="none" />
+            <!-- Middle ring colored arcs -->
+            <path d="M210 55 A155 155 0 0 1 340 110" stroke="#E97020" stroke-width="2" stroke-linecap="round"
+              fill="none" opacity="0.5" />
+            <path d="M340 110 A155 155 0 0 1 362 250" stroke="#44B649" stroke-width="2" stroke-linecap="round"
+              fill="none" opacity="0.5" />
+            <path d="M362 250 A155 155 0 0 1 270 355" stroke="#3A7CC7" stroke-width="2" stroke-linecap="round"
+              fill="none" opacity="0.5" />
+            <path d="M270 355 A155 155 0 0 1 130 348" stroke="#E8185C" stroke-width="2" stroke-linecap="round"
+              fill="none" opacity="0.5" />
+            <path d="M130 348 A155 155 0 0 1 58 245" stroke="#8E3FAF" stroke-width="2" stroke-linecap="round"
+              fill="none" opacity="0.5" />
+            <path d="M58 245 A155 155 0 0 1 210 55" stroke="#00A89D" stroke-width="2" stroke-linecap="round" fill="none"
+              opacity="0.5" />
+            <!-- Dots on outer ring -->
+            <circle cx="210" cy="10" r="4" fill="#44B649" />
+            <circle cx="385" cy="135" r="4" fill="#E8185C" />
+            <circle cx="395" cy="275" r="4" fill="#E97020" />
+            <circle cx="290" cy="390" r="4" fill="#8E3FAF" />
+            <circle cx="115" cy="390" r="4" fill="#3A7CC7" />
+            <circle cx="18" cy="270" r="4" fill="#D42025" />
+            <circle cx="25" cy="130" r="4" fill="#00A89D" />
+          </svg>
+
+          <!-- Center badge -->
+          <div class="hero-arc-center">
+            <svg class="hero-arc-center-logo" width="52" height="52" viewBox="0 0 38 38" fill="none">
+              <path d="M19 5C26 5,33 11,33 19" stroke="#44B649" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M33 19C33 27,26 33,19 33" stroke="#E8185C" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M22 9C28 11,31 17,29 23" stroke="#8E3FAF" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M9 19C9 12,14 7,19 6" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M14 30C9 27,7 22,9 17" stroke="#3A7CC7" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path d="M22 29C19 33,14 33,11 30" stroke="#D42025" stroke-width="3" stroke-linecap="round" fill="none" />
+            </svg>
+            <div class="hero-arc-center-text">Listen<br>Media</div>
+            <div class="hero-arc-center-sub">Africa's #1</div>
+          </div>
+
+          <!-- Floating stat cards -->
+          <div class="hero-stat-card">
+            <div class="stat-card-num">8</div>
+            <div class="stat-card-label">Properties</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-card-num">30K+</div>
+            <div class="stat-card-label">Circuit Audience</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-card-num">Global</div>
+            <div class="stat-card-label">Broadcast Reach</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-card-num">MASB</div>
+            <div class="stat-card-label">Certified Standard</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-card-num">2035</div>
+            <div class="stat-card-label">Africa #1 Vision</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="color-bar" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span
+      class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span></div>
+
+  <!-- ─── WHAT WE DO ─── -->
+  <section class="what-section" id="what-we-do">
+    <div class="section-inner">
+      <div class="section-label reveal">What We Do</div>
+      <h2 class="section-title reveal">Three Disciplines.<br><em>One Delivery Engine.</em></h2>
+      <p class="section-body reveal">Listen Media operates at the intersection of sport, commerce, and media —
+        identifying undervalued rights across Africa, structuring them into investable propositions, and delivering them
+        to the partners best placed to unlock their potential.</p>
+
+      <div class="what-grid">
+        <div class="what-card reveal reveal-delay-1">
+          <div class="what-tag tag-orange">Sponsorship</div>
+          <h3>Sports Sponsorship</h3>
+          <p>We match brands to the right properties with precision — ending gut-feel sponsorship and replacing it with
+            verified commercial intelligence. From opportunity identification to post-activation ROI reporting, every
+            step is measurable, defensible, and delivered on time.</p>
+        </div>
+        <div class="what-card reveal reveal-delay-2">
+          <div class="what-tag tag-blue">Rights</div>
+          <h3>Commercial Rights</h3>
+          <p>We audit, structure, and sell Africa's sports commercial rights — turning governing bodies, clubs, and
+            federations into investor-grade revenue engines. Naming rights, title sponsorships, broadcast packages,
+            media rights deals: we build the commercial infrastructure that makes them happen.</p>
+        </div>
+        <div class="what-card reveal reveal-delay-3">
+          <div class="what-tag tag-teal">Intelligence</div>
+          <h3>Media Intelligence</h3>
+          <p>We price Africa's sports media inventory with data, not guesswork. Our MASB MMAP-aligned analytics platform
+            connects advertisers to rights-cleared content, benchmarks media value, and delivers audience measurement
+            reports that brands and broadcasters can trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── SOLUTIONS ─── -->
+  <section class="solutions-bg" id="solutions">
+    <div class="section-inner">
+      <div class="section-label reveal">Our Platform</div>
+      <h2 class="section-title reveal">Solutions for <em>Every Player</em><br>in Africa's Sports Ecosystem</h2>
+      <p class="section-body reveal">Listen Media delivers bespoke solutions across six distinct stakeholder audiences —
+        each powered by MASB's Marketing Metric Audit Protocol (MMAP) and Brand Finance valuation methodology.</p>
+
+      <div class="solutions-grid">
+        <div class="solution-card reveal reveal-delay-1">
+          <div class="solution-num">01 / BRANDS &amp; SPONSORS</div>
+          <div class="solution-icon">◈</div>
+          <h3 class="solution-title">Solutions for Brands</h3>
+          <p class="solution-desc">Discover, evaluate, and activate high-impact sports partnerships with precision —
+            verified commercial intelligence replacing gut-feel sponsorship decisions.</p>
+          <ul class="solution-features">
+            <li>Sponsorship opportunity identification &amp; fit-scoring</li>
+            <li>MASB MMAP-aligned ROI measurement framework</li>
+            <li>Brand-property match scoring &amp; audience profiling</li>
+            <li>Pre-deal valuation benchmarks (Brand Finance methodology)</li>
+            <li>Activation strategy design &amp; campaign delivery</li>
+            <li>Post-activation sponsor ROI reports (14-day delivery)</li>
+            <li>Media value tracking — AVE &amp; Beyond-AVE metrics</li>
+          </ul>
+        </div>
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="solution-num">02 / RIGHTS HOLDERS</div>
+          <div class="solution-icon">◉</div>
+          <h3 class="solution-title">Solutions for Rights Holders</h3>
+          <p class="solution-desc">We build the commercial systems that transform sports properties — governing bodies,
+            clubs, federations — into bankable, investor-grade revenue assets.</p>
+          <ul class="solution-features">
+            <li>Commercial rights audit, valuation &amp; structuring</li>
+            <li>Tiered sponsorship package design (Platinum → Bronze)</li>
+            <li>Naming rights &amp; title sponsorship sales mandates</li>
+            <li>Sponsor identification, prospecting &amp; deal closing</li>
+            <li>Rights fulfilment monitoring &amp; compliance reporting</li>
+            <li>Contract management &amp; renewal management</li>
+            <li>Media rights packaging and broadcaster sales</li>
+          </ul>
+        </div>
+        <div class="solution-card reveal reveal-delay-3">
+          <div class="solution-num">03 / MEDIA COMPANIES</div>
+          <div class="solution-icon">◎</div>
+          <h3 class="solution-title">Solutions for Media</h3>
+          <p class="solution-desc">We connect broadcast and digital platforms with verified, rights-cleared sports
+            content and advertising partners — pricing inventory with data, not guesswork.</p>
+          <ul class="solution-features">
+            <li>Broadcast rights packaging &amp; broadcaster negotiations</li>
+            <li>Digital/OTT rights structuring for streaming platforms</li>
+            <li>Advertising partner prospecting for sports content</li>
+            <li>Media inventory pricing &amp; deal structure benchmarks</li>
+            <li>Sports content production &amp; distribution support</li>
+            <li>Post-broadcast audience measurement reports</li>
+          </ul>
+        </div>
+        <div class="solution-card reveal reveal-delay-1">
+          <div class="solution-num">04 / AGENCIES</div>
+          <div class="solution-icon">◇</div>
+          <h3 class="solution-title">Solutions for Agencies</h3>
+          <p class="solution-desc">Pitch sharper, plan smarter — Africa's most comprehensive sports commercial
+            intelligence layer, delivered as white-label or co-branded intelligence.</p>
+          <ul class="solution-features">
+            <li>White-label sports commercial intelligence reports</li>
+            <li>Client pitch deck production &amp; proposal support</li>
+            <li>Competitive activation benchmarking &amp; insights</li>
+            <li>Multi-client partnership portfolio management</li>
+            <li>Campaign effectiveness tracking &amp; attribution</li>
+            <li>Centralised data-driven sponsorship strategy tools</li>
+          </ul>
+        </div>
+        <div class="solution-card reveal reveal-delay-2">
+          <div class="solution-num">05 / EDUCATORS</div>
+          <div class="solution-icon">◐</div>
+          <h3 class="solution-title">Solutions for Educators</h3>
+          <p class="solution-desc">Building Africa's next generation of sports business professionals through live data,
+            real case studies, and industry-embedded curriculum rooted in MASB standards.</p>
+          <ul class="solution-features">
+            <li>Sports business curriculum licensing for universities</li>
+            <li>Executive training programmes for sports organisations</li>
+            <li>Real-world sponsorship case study libraries (Africa-specific)</li>
+            <li>Live deal data integration into classroom environments</li>
+            <li>Certification &amp; credentialling programmes</li>
+            <li>Digital course &amp; e-learning platform revenue</li>
+          </ul>
+        </div>
+        <div class="solution-card reveal reveal-delay-3">
+          <div class="solution-num">06 / INVESTORS &amp; CORPORATES</div>
+          <div class="solution-icon">◆</div>
+          <h3 class="solution-title">Solutions for Investors</h3>
+          <p class="solution-desc">Commercial due diligence, brand valuation, and investment structuring intelligence
+            for PE, VC, family offices, and corporates seeking Africa's sports economy.</p>
+          <ul class="solution-features">
+            <li>Sports asset financial due diligence &amp; valuation</li>
+            <li>Brand Finance methodology commercial asset appraisals</li>
+            <li>Deloitte-standard financial modelling for sports investments</li>
+            <li>Deal origination &amp; co-investment structuring</li>
+            <li>Post-investment commercial optimisation mandates</li>
+            <li>Sports portfolio performance benchmarking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="color-bar" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span
+      class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span></div>
+
+  <!-- ─── PORTFOLIO ─── -->
+  <section class="assets-section" id="portfolio">
+    <div class="section-inner">
+      <div class="section-label reveal">Portfolio</div>
+      <h2 class="section-title reveal">8 Properties.<br><em>One Commercial Engine.</em></h2>
+      <p class="section-body reveal">Listen Media manages a strategically diverse portfolio spanning rugby, motorsport,
+        shooting, and adventure sports — offering sponsors multi-property bundled packages that no single-property
+        agency can match.</p>
+
+      <div class="assets-grid">
+
+        <div class="asset-card reveal reveal-delay-1">
+          <div class="flagship-badge">★ Flagship</div>
+          <div class="asset-sport">Rugby Sevens · International</div>
+          <h3 class="asset-name">HSBC SVNS 2 Nairobi</h3>
+          <p class="asset-desc">Kenya's first-ever World Rugby international tournament. Feb 2026. Global broadcast via
+            RugbyPass TV. Government-backed.</p>
+          <div class="asset-stat">Global</div>
+          <div class="asset-stat-label">Broadcast Reach</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">Global</div>
+            <div class="ho-stat-label">Broadcast Reach</div>
+            <div class="ho-desc">Kenya's first-ever World Rugby international tournament. Feb 2026. Global broadcast via
+              RugbyPass TV. Government-backed.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-2">
+          <div class="asset-sport">Rugby Sevens · National Circuit</div>
+          <h3 class="asset-name">Driftwood 7s</h3>
+          <p class="asset-desc">36th edition. Opening leg of the National Sevens Circuit. KBL/Tusker title sponsor.
+            Mombasa's iconic coastal tournament.</p>
+          <div class="asset-stat">36yrs</div>
+          <div class="asset-stat-label">Tournament Heritage</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">36yrs</div>
+            <div class="ho-stat-label">Tournament Heritage</div>
+            <div class="ho-desc">36th edition. Opening leg of the National Sevens Circuit. KBL/Tusker title sponsor.
+              Mombasa's iconic coastal tournament.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-3">
+          <div class="asset-sport">Rugby Sevens · National Circuit</div>
+          <h3 class="asset-name">Dala 7s — Kisumu</h3>
+          <p class="asset-desc">Championship leg of the National Circuit. Kisumu's lakeside stadium. The circuit title
+            decider. Western Kenya's biggest rugby weekend.</p>
+          <div class="asset-stat">Circuit</div>
+          <div class="asset-stat-label">Title Decider</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">Circuit</div>
+            <div class="ho-stat-label">Title Decider</div>
+            <div class="ho-desc">Championship leg of the National Circuit. Kisumu's lakeside stadium. Western Kenya's
+              biggest rugby weekend.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-4">
+          <div class="asset-sport">Rugby Union · Club</div>
+          <h3 class="asset-name">Mombasa RFC — The Dume</h3>
+          <p class="asset-desc">Historic Kenya Cup club. Coastal icon. 15,000–25,000 season audience. Host of Driftwood
+            7s. Premier coastal brand association.</p>
+          <div class="asset-stat">25K+</div>
+          <div class="asset-stat-label">Season Audience</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">25K+</div>
+            <div class="ho-stat-label">Season Audience</div>
+            <div class="ho-desc">Historic Kenya Cup club. Coastal icon. Host of Driftwood 7s. Premier coastal brand
+              association.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-1">
+          <div class="asset-sport">National Circuit · Season-Wide</div>
+          <h3 class="asset-name">Kenya National 7s Circuit</h3>
+          <p class="asset-desc">6-leg national series. 30,000+ combined attendance. Season-long brand exposure. National
+            broadcast every weekend across Kenya.</p>
+          <div class="asset-stat">30K+</div>
+          <div class="asset-stat-label">Circuit Audience</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">30K+</div>
+            <div class="ho-stat-label">Circuit Audience</div>
+            <div class="ho-desc">6-leg national series. 30,000+ combined attendance. Season-long brand exposure.
+              National broadcast every weekend.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-2">
+          <div class="asset-sport">Adventure Motorsport</div>
+          <h3 class="asset-name">TukTuk Rally</h3>
+          <p class="asset-desc">East Africa's most viral motorsport format. Multi-county route. Natural fit for
+            automotive, fuel, tourism, and beverage brands.</p>
+          <div class="asset-stat">Viral</div>
+          <div class="asset-stat-label">Social Reach Category</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">Viral</div>
+            <div class="ho-stat-label">Social Reach Category</div>
+            <div class="ho-desc">East Africa's most viral motorsport format. Multi-county route. Natural fit for
+              automotive, fuel, tourism, and beverage brands.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-3">
+          <div class="asset-sport">Adventure / Outdoor Endurance</div>
+          <h3 class="asset-name">Crabmen East Africa</h3>
+          <p class="asset-desc">Youth-led adventure brand with high TikTok/Instagram reach. Ideal for energy, telecom,
+            banking (youth), and outdoor gear brands.</p>
+          <div class="asset-stat">Young</div>
+          <div class="asset-stat-label">Core Audience 18–34</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">Young</div>
+            <div class="ho-stat-label">Core Audience 18–34</div>
+            <div class="ho-desc">Youth-led adventure brand with high TikTok/Instagram reach. Ideal for energy, telecom,
+              banking (youth), and outdoor gear brands.</div>
+          </div>
+        </div>
+
+        <div class="asset-card reveal reveal-delay-4">
+          <div class="asset-sport">Shooting Sports · Precision</div>
+          <h3 class="asset-name">Bamburi Rifle Club</h3>
+          <p class="asset-desc">Premium high-income audience. Defence, security, and precision demographic. Insurance,
+            optical, and institutional brand fit. Kenya Shooting Federation affiliated.</p>
+          <div class="asset-stat">HNW</div>
+          <div class="asset-stat-label">Audience Income Band</div>
+          <div class="asset-hover-overlay">
+            <div class="ho-stat">HNW</div>
+            <div class="ho-stat-label">Audience Income Band</div>
+            <div class="ho-desc">Premium high-income audience. Defence, security, and precision demographic. Kenya
+              Shooting Federation affiliated.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── MMAP / ACCOUNTABILITY ─── -->
+  <section class="mmap-section" id="accountability">
+    <div class="section-inner">
+      <div class="section-label reveal">Our Standard</div>
+      <h2 class="section-title reveal">The <em>MMAP Methodology</em> —<br>Sponsorship Accountability That's Quantifiable
+      </h2>
+      <p class="section-body reveal">Every engagement Listen Media delivers is governed by the Marketing Accountability
+        Standards Board's Marketing Metric Audit Protocol — the global gold standard for independently validated,
+        transparently reported, and commercially defensible sponsorship investment.</p>
+
+      <div class="mmap-grid">
+        <div class="mmap-pillars">
+          <div class="mmap-pillar reveal reveal-delay-1">
+            <h4>Stage 1 — Media Equivalency &amp; Beyond</h4>
+            <p>We begin where most agencies stop — measuring logo impressions, broadcast mentions, and AVE — then move
+              immediately to independently verified third-party audience data. We do not rely on property-provided
+              estimates alone.</p>
+          </div>
+          <div class="mmap-pillar reveal reveal-delay-2">
+            <h4>Stage 2 — Mid-Funnel Return on Objectives</h4>
+            <p>Aligned with MASB's Sponsorship Accountability Metrics project, we track mid-funnel outcomes: brand
+              awareness lift, sponsor recall, audience quality scores, and brand affinity shifts — quantified, not
+              asserted.</p>
+          </div>
+          <div class="mmap-pillar reveal reveal-delay-3">
+            <h4>Stage 3 — Financial Attribution &amp; Business Impact</h4>
+            <p>For advanced mandates, we build financial attribution systems showing how sponsorship investment links to
+              commercial outcomes — sales lift, market share movements, and brand equity appreciation aligned to ISO
+              20671 standards.</p>
+          </div>
+          <div class="mmap-pillar reveal reveal-delay-4">
+            <h4>Brand Finance Valuation — Our Next Phase</h4>
+            <p>We are building commercial valuation capability on the Brand Finance global framework — enabling
+              ISO-standard brand and property valuations that speak the language of CFOs, investors, and boards.
+              Africa's first sports-specialist brand valuation firm.</p>
+          </div>
+          <div class="mmap-pillar reveal reveal-delay-5">
+            <h4>MASB Current Projects — Active Alignment</h4>
+            <p>Our services actively integrate MASB's live research: Brand Evaluation Standards (BES), Financial Value
+              of Brands (FVB), Sponsorship Accountability Metrics (SAM), and the Universal Marketing Dictionary — every
+              metric we use is internationally standardised.</p>
+          </div>
+        </div>
+
+        <div class="mmap-right reveal from-right">
+          <div class="mmap-callout">
+            <h3>The MMAP Audit Protocol</h3>
+            <p>The Marketing Metric Audit Protocol defines how marketing metrics should be identified, validated, and
+              applied. Listen Media is East Africa's first sports agency to embed MMAP into its standard service
+              delivery — giving brands and investors the accountability they demand.</p>
+          </div>
+
+          <table class="metrics-table">
+            <thead>
+              <tr>
+                <th>Metric Category</th>
+                <th>Standard</th>
+                <th>Delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Media Value (AVE)</td>
+                <td><span class="tag tag-blue">MASB SAM</span></td>
+                <td>Per event +14 days</td>
+              </tr>
+              <tr>
+                <td>Audience Reach &amp; Quality</td>
+                <td><span class="tag tag-teal">3rd Party Verified</span></td>
+                <td>Real-time dashboard</td>
+              </tr>
+              <tr>
+                <td>Brand Awareness Lift</td>
+                <td><span class="tag tag-blue">MMAP Stage 2</span></td>
+                <td>Pre/post survey</td>
+              </tr>
+              <tr>
+                <td>Sponsor Recall Score</td>
+                <td><span class="tag tag-blue">MMAP Stage 2</span></td>
+                <td>Quarterly</td>
+              </tr>
+              <tr>
+                <td>Rights Asset Valuation</td>
+                <td><span class="tag tag-green">Brand Finance</span></td>
+                <td>Annual appraisal</td>
+              </tr>
+              <tr>
+                <td>Financial Attribution</td>
+                <td><span class="tag tag-blue">MMAP Stage 3</span></td>
+                <td>Year-end report</td>
+              </tr>
+              <tr>
+                <td>Brand Equity Score</td>
+                <td><span class="tag tag-green">ISO 20671</span></td>
+                <td>Annual valuation</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="roi-box">
+            <div class="roi-box-label">ROI Measurement Stages</div>
+            <div class="roi-stage-row">
+              <span class="roi-row-num">01</span>
+              <span class="roi-row-text"><strong style="color:var(--white);font-weight:600;">Exposure</strong> — Logo
+                impressions, broadcast minutes, AVE, digital reach</span>
+            </div>
+            <div class="roi-stage-row">
+              <span class="roi-row-num">02</span>
+              <span class="roi-row-text"><strong style="color:var(--white);font-weight:600;">Engagement</strong> — Brand
+                recall, affinity lift, audience quality, NPS</span>
+            </div>
+            <div class="roi-stage-row">
+              <span class="roi-row-num">03</span>
+              <span class="roi-row-text"><strong style="color:var(--white);font-weight:600;">Conversion</strong> — Sales
+                attribution, CRM data, lead generation</span>
+            </div>
+            <div class="roi-stage-row">
+              <span class="roi-row-num">04</span>
+              <span class="roi-row-text"><strong style="color:var(--white);font-weight:600;">Financial Value</strong> —
+                Brand equity delta, ROMI, long-term customer value</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="color-bar" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span
+      class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span></div>
+
+  <!-- ─── SPONSORS PROMISE ─── -->
+  <section class="partners-section" id="partners">
+    <div class="section-inner">
+      <div class="section-label reveal">For Brands &amp; Partners</div>
+      <h2 class="section-title reveal">Sponsorship That Answers to<br><em>Your CFO</em>, Not Just Your CMO</h2>
+      <p class="section-body reveal">Listen Media eliminates the "black box" problem of African sports sponsorship.
+        Every partnership we broker, activate, and measure is governed by internationally recognised accountability
+        standards — your investment is defensible, your ROI is demonstrable, and your renewal conversation starts from
+        data, not hope.</p>
+
+      <div class="partner-promise">
+        <div class="promise-card reveal reveal-delay-1">
+          <div class="promise-num">01</div>
+          <h3 class="promise-title">Verified Audience Data</h3>
+          <p class="promise-desc">Before you commit a shilling, you receive independently verified audience
+            demographics, social reach data, attendance records, and fan psychographic profiles for every property — not
+            property-provided estimates. MASB Stage 1 accountability: the baseline that makes every decision defensible.
+          </p>
+        </div>
+        <div class="promise-card reveal reveal-delay-2">
+          <div class="promise-num">02</div>
+          <h3 class="promise-title">Mid-Funnel ROO Reporting</h3>
+          <p class="promise-desc">We track what happens between "seen your logo" and "bought your product" — brand
+            awareness lift, sponsor recall, affinity shift, and audience quality scores. Delivered as a branded sponsor
+            portal with live metrics. MASB's Return on Objectives framework applied in an African sports context.</p>
+        </div>
+        <div class="promise-card reveal reveal-delay-3">
+          <div class="promise-num">03</div>
+          <h3 class="promise-title">Financial Attribution</h3>
+          <p class="promise-desc">For premium partners, we build comparative financial attribution models linking your
+            sponsorship investment to measurable commercial outcomes — sales lift, brand equity appreciation, and market
+            share movement — benchmarked against ISO 20671 Brand Evaluation Standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ─── MISSION ─── -->
+  <section class="mission-section" id="mission">
+    <div class="section-inner">
+      <div class="section-label reveal">Our Mission</div>
+      <h2 class="section-title reveal">From Mombasa to<br><em>Africa's #1</em> by 2035</h2>
+      <p class="section-body reveal">A structured, phased expansion — from Kenya's most active sports commercial agency
+        to the continent's undisputed sports rights and commercial intelligence leader.</p>
+
+      <div class="mission-intro">
+        <div class="mission-statement reveal from-left">
+          <h3>Why We Exist</h3>
+          <p>Africa's sports landscape is one of the world's great undiscovered commercial frontiers. We are its
+            dedicated navigation engine — identifying undervalued rights, structuring them into investable propositions,
+            and delivering them to the partners best placed to unlock their potential. Where others see complexity, we
+            see opportunity.</p>
+        </div>
+        <div class="values-grid reveal from-right">
+          <div class="value-item">
+            <div>
+              <div class="value-label">Commercial Clarity</div>
+              <div class="value-desc">We turn athletic passion into measurable profit.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div>
+              <div class="value-label">Connected Ecosystems</div>
+              <div class="value-desc">We bridge rights holders, brands, and media.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div>
+              <div class="value-label">Global Standards</div>
+              <div class="value-desc">We bring world-class discipline to African sports.</div>
+            </div>
+          </div>
+          <div class="value-item">
+            <div>
+              <div class="value-label">Lasting Infrastructure</div>
+              <div class="value-desc">We build the systems for long-term growth.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="milestones-title reveal">The Journey</div>
+      <p class="milestones-sub reveal">Five phases of continental expansion — built on deepening rights portfolios,
+        growing institutional partnerships, and expanding geographic reach across Africa.</p>
+
+      <div class="milestones-track">
+        <div class="milestones-grid">
+          <div class="milestone-card reveal reveal-delay-1">
+            <div class="milestone-phase">Phase 1</div>
+            <div class="milestone-year">2025–26</div>
+            <div class="milestone-geo">Mombasa + Nairobi</div>
+            <div class="milestone-headline">East Africa's Most Active Sports Commercial Agency</div>
+            <p class="milestone-desc">HSBC SVNS legacy leveraged. Core portfolio of 7–10 properties. MASB MMAP embedded
+              into every client engagement. Kenya's first sports commercial rights delivery engine.</p>
+            <span class="milestone-badge tag-blue">Founding Year</span>
+          </div>
+          <div class="milestone-card reveal reveal-delay-2">
+            <div class="milestone-phase">Phase 2</div>
+            <div class="milestone-year">2027–28</div>
+            <div class="milestone-geo">Kenya + UG / TZ Entry</div>
+            <div class="milestone-headline">East Africa's Leading Sports Rights Agency</div>
+            <p class="milestone-desc">First media rights deal signed. Football club portfolio added. Athlete
+              representation arm launched. Listen Media Hub platform live. East Africa market entry.</p>
+            <span class="milestone-badge tag-teal">Regional Scale</span>
+          </div>
+          <div class="milestone-card reveal reveal-delay-3">
+            <div class="milestone-phase">Phase 3</div>
+            <div class="milestone-year">2029–30</div>
+            <div class="milestone-geo">5 Countries</div>
+            <div class="milestone-headline">Multi-Country Sports Commercial Platform</div>
+            <p class="milestone-desc">West Africa entry. BAL partnership. First proprietary event. Series A
+              institutional investment. Africa Sports Business Conference launched.</p>
+            <span class="milestone-badge tag-green">Continental Push</span>
+          </div>
+          <div class="milestone-card reveal reveal-delay-4">
+            <div class="milestone-phase">Phase 4</div>
+            <div class="milestone-year">2031–33</div>
+            <div class="milestone-geo">10–12 Countries</div>
+            <div class="milestone-headline">Africa's Sports Rights Intelligence Leader</div>
+            <p class="milestone-desc">CAF commercial partnership. Africa Commercial Index first publication. Brand
+              Finance valuation service live. Holdings restructured for private equity readiness.</p>
+            <span class="milestone-badge tag-orange">Market Leader</span>
+          </div>
+          <div class="milestone-card reveal reveal-delay-5">
+            <div class="milestone-phase">Phase 5</div>
+            <div class="milestone-year">2034–35</div>
+            <div class="milestone-geo">15 Countries</div>
+            <div class="milestone-headline">Africa #1 — The Continent's Commercial Rights Standard</div>
+            <p class="milestone-desc">Pan-African operations across 15 countries. NSE IPO or strategic acquisition
+              ready. The definitive commercial intelligence and rights platform for African sport on the global stage.
+            </p>
+            <span class="milestone-badge tag-pink">Vision Achieved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="color-bar" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span
+      class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span></div>
+
+  <!-- ─── CTA ─── -->
+  <section class="cta-section" id="contact">
+    <div class="cta-glow-left" aria-hidden="true"></div>
+    <div class="cta-glow-right" aria-hidden="true"></div>
+    <div class="cta-content reveal">
+      <h2>Africa's Sports Commercial Revolution<br>Starts in <em>Mombasa</em></h2>
+      <p>Whether you are a brand seeking verified sponsorship ROI, a rights holder ready to monetise your asset, a media
+        company building your sports inventory, or an investor who has spotted the opportunity — Listen Media is the
+        partner that turns Africa's sports potential into bankable reality.</p>
+      <div class="cta-buttons">
+        <button class="btn-white" id="ctaPartnerBtn">Partner With Us</button>
+        <button class="btn-outline-white" id="ctaDownloadBtn">Download Capabilities Deck</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Listen Media</h3>
+          <p>Africa's Specialist Sports Sponsorship, Rights &amp; Media Intelligence Partner. Headquartered in Mombasa,
+            Kenya.</p>
+          <div class="footer-badges">
+            <span>MASB MMAP</span>
+            <span>ISO 20671</span>
+            <span>Brand Finance</span>
+            <span>IFRS</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="#">For Brands</a>
+          <a href="#">For Rights Holders</a>
+          <a href="#">For Media Companies</a>
+          <a href="#">For Agencies</a>
+          <a href="#">For Educators</a>
+          <a href="#">For Investors</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Listen Media</a>
+          <a href="#">Our Portfolio</a>
+          <a href="#">Our Mission</a>
+          <a href="#">Careers</a>
+          <a href="#">News &amp; Insights</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">Mombasa (HQ)</a>
+          <a href="#">Nairobi Office</a>
+          <a href="mailto:info@listenmedia.co.ke">info@listenmedia.co.ke</a>
+          <a href="tel:+254706064244">+254 706 064 244</a>
+          <a href="https://www.listenmedia.co.ke" target="_blank" rel="noopener">www.listenmedia.co.ke</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Listen Media Limited. All rights reserved. Incorporated in Kenya. Companies Act 2015.</p>
+        <div class="footer-standards">
+          <span>MASB MMAP Aligned</span>
+          <span>Brand Finance Methodology</span>
+          <span>PSASB Standards</span>
+          <span>IFRS Compliant</span>
+          <span>ISO 20671</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════ -->
+  <script>
+    /* ─── NAV: Scroll solidify ─── */
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 55);
+    }, { passive: true });
+
+    /* ─── MOBILE MENU ─── */
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburgerBtn');
+
+    function toggleMobileMenu() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', isOpen);
+    }
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      document.body.style.overflow = '';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    /* Close on Escape */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+    });
+
+    /* ─── SCROLL REVEAL (IntersectionObserver) ─── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -48px 0px'
+    });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ─── HERO BUTTON SCROLL ─── */
+    document.getElementById('heroExploreBrn').addEventListener('click', () => {
+      document.getElementById('solutions').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('heroPortfolioBtn').addEventListener('click', () => {
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>
