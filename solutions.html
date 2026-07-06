@@ -11,6 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,28 +29,28 @@
 
   <!-- ─── NAV ─── -->
   <nav id="mainNav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
+    <div class="container d-flex justify-content-between align-items-center">
       <a class="nav-logo" href="index.html" aria-label="Listen Media home">
         <svg width="36" height="36" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true">
-          <path d="M19 5C26 5,33 11,33 19" stroke="#44B649" stroke-width="3" stroke-linecap="round" fill="none" />
-          <path d="M33 19C33 27,26 33,19 33" stroke="#E8185C" stroke-width="3" stroke-linecap="round" fill="none" />
-          <path d="M22 9C28 11,31 17,29 23" stroke="#8E3FAF" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M19 5C26 5,33 11,33 19" stroke="#003366" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M33 19C33 27,26 33,19 33" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M22 9C28 11,31 17,29 23" stroke="#003366" stroke-width="3" stroke-linecap="round" fill="none" />
           <path d="M9 19C9 12,14 7,19 6" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
-          <path d="M14 30C9 27,7 22,9 17" stroke="#3A7CC7" stroke-width="3" stroke-linecap="round" fill="none" />
-          <path d="M22 29C19 33,14 33,11 30" stroke="#D42025" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M14 30C9 27,7 22,9 17" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M22 29C19 33,14 33,11 30" stroke="#003366" stroke-width="3" stroke-linecap="round" fill="none" />
         </svg>
         <div class="nav-logo-text">LISTEN<span>MEDIA</span></div>
       </a>
-      <div class="nav-links">
+      <div class="nav-links d-none d-lg-flex gap-2 align-items-center">
         <a href="what-we-do.html">What We Do</a>
         <a href="solutions.html">Solutions</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="accountability.html">Accountability</a>
         <a href="mission.html">Our Mission</a>
       </div>
-      <button class="nav-cta" id="navCtaBtn">Partner With Us</button>
-      <div class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" role="button"
+      <button class="btn btn-primary rounded-pill fw-bold px-4 d-none d-lg-block" id="navCtaBtn">Partner With Us</button>
+      <div class="hamburger" style="color: var(--dark-blue);" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" role="button"
         tabindex="0">
         <span></span><span></span><span></span>
       </div>
@@ -168,23 +169,23 @@
   <section class="cta-section" id="contact">
     <div class="cta-glow-left" aria-hidden="true"></div>
     <div class="cta-glow-right" aria-hidden="true"></div>
-    <div class="cta-content reveal">
+    <div class="container text-center reveal py-5">
       <h2>Africa's Sports Commercial Revolution<br>Starts in <em>Mombasa</em></h2>
       <p>Whether you are a brand seeking verified sponsorship ROI, a rights holder ready to monetise your asset, a media
         company building your sports inventory, or an investor who has spotted the opportunity — Listen Media is the
         partner that turns Africa's sports potential into bankable reality.</p>
-      <div class="cta-buttons">
-        <button class="btn-white" id="ctaPartnerBtn">Partner With Us</button>
-        <button class="btn-outline-white" id="ctaDownloadBtn">Download Capabilities Deck</button>
+      <div class="d-flex justify-content-center flex-wrap gap-3 mt-2">
+        <button class="btn btn-primary rounded-pill px-4 py-2 fw-bold" id="ctaPartnerBtn">Partner With Us</button>
+        <button class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold" id="ctaDownloadBtn">Download Capabilities Deck</button>
       </div>
     </div>
   </section>
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
+    <div class="container py-5">
+      <div class="row g-4 mb-2">
+        <div class="col-lg-4">
           <h3>Listen Media</h3>
           <p>Africa's Specialist Sports Sponsorship, Rights &amp; Media Intelligence Partner. Headquartered in Mombasa,
             Kenya.</p>
@@ -195,7 +196,7 @@
             <span>IFRS</span>
           </div>
         </div>
-        <div class="footer-col">
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex flex-column gap-2">
           <h4>Solutions</h4>
           <a href="#">For Brands</a>
           <a href="#">For Rights Holders</a>
@@ -204,7 +205,7 @@
           <a href="#">For Educators</a>
           <a href="#">For Investors</a>
         </div>
-        <div class="footer-col">
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex flex-column gap-2">
           <h4>Company</h4>
           <a href="#">About Listen Media</a>
           <a href="#">Our Portfolio</a>
@@ -213,7 +214,7 @@
           <a href="#">News &amp; Insights</a>
           <a href="#">Contact Us</a>
         </div>
-        <div class="footer-col">
+        <div class="col-lg-2 col-md-4 col-sm-6 d-flex flex-column gap-2">
           <h4>Contact</h4>
           <a href="#">Mombasa (HQ)</a>
           <a href="#">Nairobi Office</a>
@@ -222,9 +223,20 @@
           <a href="https://www.listenmedia.co.ke" target="_blank" rel="noopener">www.listenmedia.co.ke</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="row border-top pt-2 mt-2 align-items-center"><div class="col-md-6">
+                <a class="nav-logo mb-3" href="index.html" aria-label="Listen Media home" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+          <svg width="40" height="40" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 5C26 5,33 11,33 19" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M33 19C33 27,26 33,19 33" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M22 9C28 11,31 17,29 23" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M9 19C9 12,14 7,19 6" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M14 30C9 27,7 22,9 17" stroke="#E97020" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M22 29C19 33,14 33,11 30" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" />
+          </svg>
+          <div class="nav-logo-text" style="color:#FFFFFF; font-size:1.5rem; font-weight:800; font-family:'Inter', sans-serif;">LISTEN<span style="color:var(--orange); font-weight:300;">MEDIA</span></div>
+        </a>
         <p>© 2026 Listen Media Limited. All rights reserved. Incorporated in Kenya. Companies Act 2015.</p>
-        <div class="footer-standards">
+        </div><div class="col-md-6 d-flex flex-wrap gap-3 justify-content-md-end">
           <span>MASB MMAP Aligned</span>
           <span>Brand Finance Methodology</span>
           <span>PSASB Standards</span>
@@ -293,6 +305,19 @@
       const contactSec = document.getElementById('contact');
       if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
       else window.location.href = 'index.html#contact';
+    });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Active Page Highlighter -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
